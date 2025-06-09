@@ -1,6 +1,7 @@
 resource "aws_instance" "roboshop" {
+  count = 4
   ami           = var.ami_id  # left and right side names should not be the same
-  instance_type =  
+  instance_type = var.environment == "dev" ? "t3.micro" : "t3.small"  #var.a == "" ? "if_true" : if_true  [teranary operation]
   vpc_security_group_ids = [aws_security_group.allow_all.id]
 
 tags =var.ec2_tags
