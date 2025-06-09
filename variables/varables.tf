@@ -1,6 +1,6 @@
 variable "ami_id" {
   type = string
-  default = "09c813fb71547fc4f"
+  default = "ami-09c813fb71547fc4f"
   description = "RHEL-9 DEVOPS PRACTICE"
 }
 
