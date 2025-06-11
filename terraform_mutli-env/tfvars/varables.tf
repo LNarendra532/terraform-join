@@ -5,8 +5,7 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-    type= string
-    default = "t3.micro" 
+   
 }
 
 variable "ec2_tags" {
@@ -68,10 +67,6 @@ variable "sg_tags" {
   
 }
 
-variable "instances" {
-  default = ["mongodb", "catalogue", "reddis", "user"]
-  
-}
 
 variable "domain_name" {
   default = "narendaws-84s.site"
@@ -80,5 +75,27 @@ variable "domain_name" {
 
 variable "zone_id" {
   default = "Z0388521KFVW7JPV7X7D"
+  
+}
+
+variable "environment" {
+  
+}
+
+variable "common_tags" {
+  default = {
+      Project ="Roboshop"
+      Terraform ="true"
+  }
+}
+
+variable "instances" {
+
+default = ["mongo", "reddis"]
+
+}
+
+variable "project" {
+  default = "Roboshop"
   
 }

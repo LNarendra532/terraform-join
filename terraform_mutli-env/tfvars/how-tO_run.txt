@@ -1,0 +1,22 @@
+#we need to initalize with dev production 
+
+terraform init -backend-config=dev/backend.tf  
+
+
+terraform plan -var-file=dev/dev.tfvars
+
+
+terraform apply -var-file=dev/dev.tfvars -auto-approve
+
+#we need to initalize with prod production 
+
+terraform -reconfigure init -backend-config=dev/backend.tf  
+
+
+terraform plan -var-file=dev/prod.tfvars
+
+
+terraform apply -var-file=dev/prod.tfvars -auto-approve
+
+
+
