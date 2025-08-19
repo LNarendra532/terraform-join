@@ -29,6 +29,9 @@ resource "aws_security_group" "allow_all" {
     ipv6_cidr_blocks = ["::/0"]
             }
 
+  lifecycle {
+      create_before_destroy = true
+    }
   tags = {
     Name = "allow-all"
         }
